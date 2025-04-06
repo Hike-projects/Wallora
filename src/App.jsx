@@ -1,7 +1,7 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import { Auth0Provider } from '@auth0/auth0-react'
 import Home from './pages/home/Home'
-import LoginTest from './pages/logintest'
+import Login from './pages/login/Login'
 
 function App() {
   return (
@@ -13,7 +13,7 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/logintest" element={<LoginTest />} />
+          <Route path="/login" element={<Login />} />
         </Routes>
       </BrowserRouter>
     </Auth0Provider>
