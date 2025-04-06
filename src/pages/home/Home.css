@@ -53,6 +53,12 @@ body {
     color: #fff;
   }
   
+  .wallpaper-category {
+    font-size: 0.85rem;
+    opacity: 0.7;
+    font-style: italic;
+  }
+  
   .wallpaper-buttons {
     display: flex;
     justify-content: space-between;
@@ -74,16 +80,16 @@ body {
   .wallpaper-buttons button:hover {
     background: rgba(255, 255, 255, 0.3);
   }
-  .category-select {
+  .search-input {
+    width: 100%;
+    max-width: 300px;
+    padding: 10px;
+    border-radius: 8px;
+    border: none;
     margin-bottom: 20px;
-    color: white;
-  }
-  
-  .category-select select {
-    padding: 5px 10px;
-    border-radius: 6px;
+    font-size: 1rem;
     background: rgba(255, 255, 255, 0.1);
     color: white;
-    border: none;
+    outline: none;
   }
   

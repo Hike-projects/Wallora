@@ -52,11 +52,9 @@ const initialWallpapers = [
   }
 ];
 
-const categories = ['All', 'Nature', 'City', 'Space'];
-
 const Home = () => {
   const [data, setData] = useState(initialWallpapers);
-  const [selectedCategory, setSelectedCategory] = useState('All');
+  const [searchText, setSearchText] = useState('');
 
   const toggleLike = (index) => {
     const newData = [...data];
@@ -72,22 +70,21 @@ const Home = () => {
     window.open(url, '_blank');
   };
 
-  const filteredWallpapers = selectedCategory === 'All'
-    ? data
-    : data.filter(w => w.category === selectedCategory);
+  const filteredWallpapers = data.filter(w =>
+    w.name.toLowerCase().includes(searchText.toLowerCase())
+  );
 
   return (
     <div className="home-container">
       <h1>Wallpapers</h1>
-      
-      <div className="category-select">
-        <label>Category: </label>
-        <select onChange={(e) => setSelectedCategory(e.target.value)} value={selectedCategory}>
-          {categories.map((cat, idx) => (
-            <option key={idx} value={cat}>{cat}</option>
-          ))}
-        </select>
-      </div>
+
+      <input
+        className="search-input"
+        type="text"
+        placeholder="Search wallpapers..."
+        value={searchText}
+        onChange={(e) => setSearchText(e.target.value)}
+      />
 
       <div className="wallpaper-grid">
         {filteredWallpapers.map((wallpaper, index) => (
@@ -95,6 +92,7 @@ const Home = () => {
             <img src={`${wallpaper.url}?auto=compress&cs=tinysrgb&h=800`} alt={wallpaper.name} />
             <div className="wallpaper-info">
               <p>{wallpaper.name}</p>
+              <p className="wallpaper-category">{wallpaper.category}</p>
               <div className="wallpaper-buttons">
                 <button onClick={() => handleDownload(wallpaper.url, index)}>
                   📥 {wallpaper.downloads}
