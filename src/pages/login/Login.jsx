@@ -27,14 +27,12 @@ function Login() {
   const [user, setUser] = useState(null);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [remember, setRemember] = useState(false);
   const [mode, setMode] = useState("login");
   const [showPassword, setShowPassword] = useState(false);
 
   const handleEmailLogin = async () => {
     const { error } = await supabase.auth.signInWithPassword({ email, password });
     if (error) return alert("Login failed. If you're new, click 'Register'.");
-    if (remember) localStorage.setItem("savedEmail", email);
   };
 
   const handleRegister = async () => {
@@ -72,9 +70,6 @@ function Login() {
     const { data: listener } = supabase.auth.onAuthStateChange((_event, session) => {
       setUser(session?.user || null);
     });
-
-    const savedEmail = localStorage.getItem("savedEmail");
-    if (savedEmail) setEmail(savedEmail);
 
     getSession();
     return () => listener.subscription.unsubscribe();
@@ -131,14 +126,6 @@ function Login() {
               ></i>
             </div>
             <div className="options spaced">
-              <label className="remember">
-                <input
-                  type="checkbox"
-                  checked={remember}
-                  onChange={() => setRemember(!remember)}
-                />{" "}
-                Remember Me
-              </label>
               <span className="forgot" onClick={handleForgotPassword}>
                 Forgot Password?
               </span>
