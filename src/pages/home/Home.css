@@ -1,0 +1,89 @@
+body {
+    margin: 0;
+    background: #000;
+    font-family: 'Arial', sans-serif;
+  }
+  
+  .home-container {
+    padding: 30px;
+    text-align: center;
+    color: white;
+  }
+  
+  h1 {
+    margin-bottom: 30px;
+    font-size: 2rem;
+  }
+  
+  .wallpaper-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 20px;
+  }
+  
+  .wallpaper-item {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 16px;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    overflow: hidden;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+    transition: transform 0.3s;
+  }
+  
+  .wallpaper-item:hover {
+    transform: scale(1.02);
+  }
+  
+  .wallpaper-item img {
+    width: 100%;
+    height: 320px;
+    object-fit: cover;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  }
+  
+  .wallpaper-info {
+    padding: 15px;
+  }
+  
+  .wallpaper-info p {
+    margin: 0 0 10px;
+    font-weight: 600;
+    font-size: 1rem;
+    color: #fff;
+  }
+  
+  .wallpaper-buttons {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .wallpaper-buttons button {
+    background: rgba(255, 255, 255, 0.15);
+    border: none;
+    color: white;
+    font-size: 0.9rem;
+    padding: 6px 10px;
+    border-radius: 6px;
+    cursor: pointer;
+    margin: 0 5px;
+    transition: background 0.2s;
+  }
+  
+  .wallpaper-buttons button:hover {
+    background: rgba(255, 255, 255, 0.3);
+  }
+  .category-select {
+    margin-bottom: 20px;
+    color: white;
+  }
+  
+  .category-select select {
+    padding: 5px 10px;
+    border-radius: 6px;
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+    border: none;
+  }
+  
