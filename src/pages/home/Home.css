@@ -15,6 +15,34 @@ body {
     font-size: 2rem;
   }
   
+  .search-bar {
+    position: relative;
+    width: 100%;
+    max-width: 300px;
+    margin: 0 auto 20px;
+  }
+  
+  .search-icon {
+    position: absolute;
+    left: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: white;
+    font-size: 1rem;
+    pointer-events: none;
+  }
+  
+  .search-input {
+    width: 100%;
+    padding: 10px 10px 10px 36px;
+    border-radius: 8px;
+    border: none;
+    font-size: 1rem;
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+    outline: none;
+  }
+  
   .wallpaper-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
@@ -79,17 +107,5 @@ body {
   
   .wallpaper-buttons button:hover {
     background: rgba(255, 255, 255, 0.3);
-  }
-  .search-input {
-    width: 100%;
-    max-width: 300px;
-    padding: 10px;
-    border-radius: 8px;
-    border: none;
-    margin-bottom: 20px;
-    font-size: 1rem;
-    background: rgba(255, 255, 255, 0.1);
-    color: white;
-    outline: none;
   }
   
