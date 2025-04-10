@@ -1,4 +1,7 @@
 /* Global CSS Reset */
+
+@import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;500;600;700&display=swap');
+
 * {
   margin: 0;
   padding: 0;
@@ -9,7 +12,7 @@ html, body {
   height: 100%;
   background: #000;
   color: #fff;
-  font-family: 'Segoe UI', sans-serif;
+  font-family: 'Work Sans', sans-serif;
 }
 
 /* Glassmorphism card */
